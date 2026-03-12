@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-navy: #1c2736;
+  --color-cream: #d4d0ca;
+  --color-dark: #111111;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #1c2736;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size:
+    60px 60px,
+    60px 60px,
+    300px 300px,
+    300px 300px;
+  color: #ffffff;
+  font-family: var(--font-dm), sans-serif;
+}
+
+/* Scroll snap */
+.snap-container {
+  scroll-snap-type: y proximity;
+}
+
+.snap-section {
+  scroll-snap-align: start;
+}
+
+/* Fade in on scroll */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mockup cards */
+.mockup-card {
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.4s ease;
+}
+
+.mockup-card:hover {
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.mockup-card img {
+  transition: transform 0.4s ease;
+}
+
+.mockup-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Sticky nav */
+.nav-link {
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-link.active {
+  color: #d4d0ca;
+  border-color: #d4d0ca;
+}
