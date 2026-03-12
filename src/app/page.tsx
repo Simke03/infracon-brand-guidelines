@@ -64,13 +64,13 @@ function LogoImage({ src, alt, className = "", invert = false }: { src: string; 
     return <LogoPlaceholder label={alt} className={className} />;
   }
   return (
-    <div className={`flex items-center justify-center p-8 min-h-[160px] ${className}`}>
+    <div className={`flex items-center justify-center p-4 sm:p-8 min-h-[120px] sm:min-h-[160px] ${className}`}>
       <Image
         src={src}
         alt={alt}
         width={240}
         height={160}
-        className={`max-h-[140px] w-auto object-contain ${invert ? "brightness-0" : ""}`}
+        className={`max-h-[100px] sm:max-h-[140px] w-auto object-contain ${invert ? "brightness-0" : ""}`}
         style={invert ? { filter: "brightness(0) saturate(100%)" } : undefined}
         onError={() => setError(true)}
       />
@@ -271,10 +271,10 @@ export default function BrandGuidelines() {
               />
             </div>
 
-            <h1 className="font-[family-name:var(--font-orbitron)] text-5xl md:text-7xl lg:text-8xl font-bold tracking-[0.2em] text-white mb-6">
+            <h1 className="font-[family-name:var(--font-orbitron)] text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-[0.12em] sm:tracking-[0.2em] text-white mb-6">
               INFRACON
             </h1>
-            <p className="font-[family-name:var(--font-dm)] text-base md:text-lg tracking-[0.3em] uppercase text-[#d4d0ca]/70 mb-2">
+            <p className="font-[family-name:var(--font-dm)] text-xs sm:text-base md:text-lg tracking-[0.15em] sm:tracking-[0.3em] uppercase text-[#d4d0ca]/70 mb-2">
               Infrastructure &amp; Construction
             </p>
             <div className="w-16 h-px bg-[#d4d0ca]/30 mx-auto my-8" />
@@ -292,13 +292,13 @@ export default function BrandGuidelines() {
         </section>
 
         {/* LOGO */}
-        <section id="logo" className="snap-section min-h-screen py-28 px-6">
+        <section id="logo" className="snap-section min-h-screen py-16 sm:py-28 px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="fade-in mb-20">
+            <div className="fade-in mb-10 sm:mb-20">
               <p className="text-xs tracking-[0.3em] uppercase text-[#d4d0ca]/50 font-[family-name:var(--font-dm)] mb-3">
                 01
               </p>
-              <h2 className="font-[family-name:var(--font-orbitron)] text-3xl md:text-4xl font-bold tracking-[0.15em] uppercase text-white">
+              <h2 className="font-[family-name:var(--font-orbitron)] text-2xl sm:text-3xl md:text-4xl font-bold tracking-[0.15em] uppercase text-white">
                 Logo
               </h2>
               <div className="w-12 h-px bg-[#d4d0ca]/30 mt-6" />
@@ -343,8 +343,8 @@ export default function BrandGuidelines() {
               </div>
             </div>
 
-            <div className="fade-in grid grid-cols-1 md:grid-cols-2 gap-10 mt-16">
-              <div className="border border-[#d4d0ca]/10 rounded-lg p-8">
+            <div className="fade-in grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 mt-10 sm:mt-16">
+              <div className="border border-[#d4d0ca]/10 rounded-lg p-5 sm:p-8">
                 <h3 className="font-[family-name:var(--font-dm)] text-sm font-medium tracking-[0.15em] uppercase text-[#d4d0ca] mb-4">
                   Zaštitni prostor
                 </h3>
@@ -352,7 +352,7 @@ export default function BrandGuidelines() {
                   Minimalan zaštitni prostor oko loga jednak je visini krovnog/strelica elementa u ikoni. Ovaj prostor mora ostati slobodan od drugih grafičkih elemenata ili teksta.
                 </p>
               </div>
-              <div className="border border-[#d4d0ca]/10 rounded-lg p-8">
+              <div className="border border-[#d4d0ca]/10 rounded-lg p-5 sm:p-8">
                 <h3 className="font-[family-name:var(--font-dm)] text-sm font-medium tracking-[0.15em] uppercase text-[#d4d0ca] mb-4">
                   Minimalna veličina
                 </h3>
@@ -377,13 +377,13 @@ export default function BrandGuidelines() {
 
 
         {/* COLOR PALETTE */}
-        <section id="colors" className="snap-section py-20 px-6">
+        <section id="colors" className="snap-section py-16 sm:py-20 px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="fade-in mb-20">
+            <div className="fade-in mb-10 sm:mb-20">
               <p className="text-xs tracking-[0.3em] uppercase text-[#d4d0ca]/50 font-[family-name:var(--font-dm)] mb-3">
                 03
               </p>
-              <h2 className="font-[family-name:var(--font-orbitron)] text-3xl md:text-4xl font-bold tracking-[0.15em] uppercase text-white">
+              <h2 className="font-[family-name:var(--font-orbitron)] text-2xl sm:text-3xl md:text-4xl font-bold tracking-[0.15em] uppercase text-white">
                 Boje
               </h2>
               <div className="w-12 h-px bg-[#d4d0ca]/30 mt-6" />
@@ -393,7 +393,7 @@ export default function BrandGuidelines() {
               {COLORS.map((color) => (
                 <div key={color.name}>
                   <div
-                    className={`${color.bg} ${color.border} rounded-lg h-44 mb-4`}
+                    className={`${color.bg} ${color.border} rounded-lg h-28 sm:h-44 mb-4`}
                   />
                   <h3 className="font-[family-name:var(--font-dm)] text-lg font-bold text-white mb-2">
                     {color.name}
@@ -418,21 +418,21 @@ export default function BrandGuidelines() {
         </section>
 
         {/* TYPOGRAPHY */}
-        <section id="typography" className="snap-section min-h-screen py-28 px-6 bg-[#151e2b]">
+        <section id="typography" className="snap-section min-h-screen py-16 sm:py-28 px-4 sm:px-6 bg-[#151e2b]">
           <div className="max-w-6xl mx-auto">
-            <div className="fade-in mb-20">
+            <div className="fade-in mb-10 sm:mb-20">
               <p className="text-xs tracking-[0.3em] uppercase text-[#d4d0ca]/50 font-[family-name:var(--font-dm)] mb-3">
                 04
               </p>
-              <h2 className="font-[family-name:var(--font-orbitron)] text-3xl md:text-4xl font-bold tracking-[0.15em] uppercase text-white">
+              <h2 className="font-[family-name:var(--font-orbitron)] text-2xl sm:text-3xl md:text-4xl font-bold tracking-[0.15em] uppercase text-white">
                 Tipografija
               </h2>
               <div className="w-12 h-px bg-[#d4d0ca]/30 mt-6" />
             </div>
 
             {/* Orbitron */}
-            <div className="fade-in mb-20">
-              <div className="flex items-baseline gap-4 mb-6">
+            <div className="fade-in mb-12 sm:mb-20">
+              <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 mb-6">
                 <h3 className="font-[family-name:var(--font-orbitron)] text-lg font-bold tracking-[0.1em] text-[#d4d0ca]">
                   Orbitron 700
                 </h3>
@@ -441,20 +441,20 @@ export default function BrandGuidelines() {
                 </span>
               </div>
 
-              <div className="border border-[#d4d0ca]/10 rounded-lg p-8 mb-6">
-                <p className="font-[family-name:var(--font-orbitron)] text-2xl md:text-3xl font-bold tracking-[0.15em] text-white/80 leading-relaxed break-all">
+              <div className="border border-[#d4d0ca]/10 rounded-lg p-4 sm:p-8 mb-6">
+                <p className="font-[family-name:var(--font-orbitron)] text-base sm:text-2xl md:text-3xl font-bold tracking-[0.08em] sm:tracking-[0.15em] text-white/80 leading-relaxed break-all">
                   A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
                 </p>
               </div>
 
-              <div className="border border-[#d4d0ca]/10 rounded-lg p-8 space-y-4">
-                <p className="font-[family-name:var(--font-orbitron)] text-5xl md:text-6xl font-bold tracking-[0.2em] text-white">
+              <div className="border border-[#d4d0ca]/10 rounded-lg p-4 sm:p-8 space-y-4">
+                <p className="font-[family-name:var(--font-orbitron)] text-2xl sm:text-5xl md:text-6xl font-bold tracking-[0.1em] sm:tracking-[0.2em] text-white">
                   INFRACON
                 </p>
-                <p className="font-[family-name:var(--font-orbitron)] text-3xl md:text-4xl font-bold tracking-[0.15em] text-white/70">
+                <p className="font-[family-name:var(--font-orbitron)] text-xl sm:text-3xl md:text-4xl font-bold tracking-[0.1em] sm:tracking-[0.15em] text-white/70">
                   INFRACON
                 </p>
-                <p className="font-[family-name:var(--font-orbitron)] text-xl font-bold tracking-[0.1em] text-white/50">
+                <p className="font-[family-name:var(--font-orbitron)] text-base sm:text-xl font-bold tracking-[0.1em] text-white/50">
                   INFRACON
                 </p>
                 <p className="font-[family-name:var(--font-orbitron)] text-sm font-bold tracking-[0.1em] text-white/30">
@@ -464,8 +464,8 @@ export default function BrandGuidelines() {
             </div>
 
             {/* DM Sans */}
-            <div className="fade-in mb-20">
-              <div className="flex items-baseline gap-4 mb-6">
+            <div className="fade-in mb-12 sm:mb-20">
+              <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 mb-6">
                 <h3 className="font-[family-name:var(--font-dm)] text-lg font-bold tracking-[0.05em] text-[#d4d0ca]">
                   DM Sans
                 </h3>
@@ -474,22 +474,22 @@ export default function BrandGuidelines() {
                 </span>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="border border-[#d4d0ca]/10 rounded-lg p-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+                <div className="border border-[#d4d0ca]/10 rounded-lg p-5 sm:p-8">
                   <p className="text-[10px] tracking-[0.2em] uppercase text-[#d4d0ca]/50 mb-4">Regular 400</p>
-                  <p className="font-[family-name:var(--font-dm)] text-base font-normal text-white/70 leading-relaxed">
+                  <p className="font-[family-name:var(--font-dm)] text-sm sm:text-base font-normal text-white/70 leading-relaxed">
                     Infrastruktura i građevinarstvo zahtijevaju preciznost, kvalitetu i posvećenost izvrsnosti u svakom detalju projekta.
                   </p>
                 </div>
-                <div className="border border-[#d4d0ca]/10 rounded-lg p-8">
+                <div className="border border-[#d4d0ca]/10 rounded-lg p-5 sm:p-8">
                   <p className="text-[10px] tracking-[0.2em] uppercase text-[#d4d0ca]/50 mb-4">Medium 500</p>
-                  <p className="font-[family-name:var(--font-dm)] text-base font-medium text-white/70 leading-relaxed">
+                  <p className="font-[family-name:var(--font-dm)] text-sm sm:text-base font-medium text-white/70 leading-relaxed">
                     Infrastruktura i građevinarstvo zahtijevaju preciznost, kvalitetu i posvećenost izvrsnosti u svakom detalju projekta.
                   </p>
                 </div>
-                <div className="border border-[#d4d0ca]/10 rounded-lg p-8">
+                <div className="border border-[#d4d0ca]/10 rounded-lg p-5 sm:p-8">
                   <p className="text-[10px] tracking-[0.2em] uppercase text-[#d4d0ca]/50 mb-4">Bold 700</p>
-                  <p className="font-[family-name:var(--font-dm)] text-base font-bold text-white/70 leading-relaxed">
+                  <p className="font-[family-name:var(--font-dm)] text-sm sm:text-base font-bold text-white/70 leading-relaxed">
                     Infrastruktura i građevinarstvo zahtijevaju preciznost, kvalitetu i posvećenost izvrsnosti u svakom detalju projekta.
                   </p>
                 </div>
@@ -497,12 +497,12 @@ export default function BrandGuidelines() {
             </div>
 
             {/* Font pairing */}
-            <div className="fade-in mb-20">
+            <div className="fade-in mb-12 sm:mb-20">
               <h3 className="text-xs tracking-[0.2em] uppercase text-[#d4d0ca]/50 font-[family-name:var(--font-dm)] mb-6">
                 Font Pairing
               </h3>
-              <div className="border border-[#d4d0ca]/10 rounded-lg p-10">
-                <p className="font-[family-name:var(--font-orbitron)] text-2xl md:text-3xl font-bold tracking-[0.1em] text-white mb-4">
+              <div className="border border-[#d4d0ca]/10 rounded-lg p-5 sm:p-10">
+                <p className="font-[family-name:var(--font-orbitron)] text-xl sm:text-2xl md:text-3xl font-bold tracking-[0.08em] sm:tracking-[0.1em] text-white mb-4">
                   GRADIMO BUDUĆNOST
                 </p>
                 <p className="font-[family-name:var(--font-dm)] text-base text-white/60 leading-relaxed max-w-2xl">
@@ -516,33 +516,33 @@ export default function BrandGuidelines() {
               <h3 className="text-xs tracking-[0.2em] uppercase text-[#d4d0ca]/50 font-[family-name:var(--font-dm)] mb-6">
                 Hijerarhija veličina
               </h3>
-              <div className="border border-[#d4d0ca]/10 rounded-lg p-10 space-y-6">
-                <div className="flex items-baseline gap-6 border-b border-[#d4d0ca]/5 pb-4">
-                  <span className="text-[10px] text-white/30 w-12 shrink-0 font-[family-name:var(--font-dm)]">H1</span>
-                  <p className="font-[family-name:var(--font-orbitron)] text-4xl font-bold tracking-[0.1em] text-white">
+              <div className="border border-[#d4d0ca]/10 rounded-lg p-5 sm:p-10 space-y-5 sm:space-y-6">
+                <div className="flex items-baseline gap-3 sm:gap-6 border-b border-[#d4d0ca]/5 pb-4">
+                  <span className="text-[10px] text-white/30 w-10 sm:w-12 shrink-0 font-[family-name:var(--font-dm)]">H1</span>
+                  <p className="font-[family-name:var(--font-orbitron)] text-xl sm:text-4xl font-bold tracking-[0.08em] sm:tracking-[0.1em] text-white">
                     NASLOV SEKCIJE
                   </p>
                 </div>
-                <div className="flex items-baseline gap-6 border-b border-[#d4d0ca]/5 pb-4">
-                  <span className="text-[10px] text-white/30 w-12 shrink-0 font-[family-name:var(--font-dm)]">H2</span>
-                  <p className="font-[family-name:var(--font-dm)] text-2xl font-bold text-white/80">
+                <div className="flex items-baseline gap-3 sm:gap-6 border-b border-[#d4d0ca]/5 pb-4">
+                  <span className="text-[10px] text-white/30 w-10 sm:w-12 shrink-0 font-[family-name:var(--font-dm)]">H2</span>
+                  <p className="font-[family-name:var(--font-dm)] text-lg sm:text-2xl font-bold text-white/80">
                     Podnaslov sekcije
                   </p>
                 </div>
-                <div className="flex items-baseline gap-6 border-b border-[#d4d0ca]/5 pb-4">
-                  <span className="text-[10px] text-white/30 w-12 shrink-0 font-[family-name:var(--font-dm)]">H3</span>
-                  <p className="font-[family-name:var(--font-dm)] text-lg font-medium text-white/70">
+                <div className="flex items-baseline gap-3 sm:gap-6 border-b border-[#d4d0ca]/5 pb-4">
+                  <span className="text-[10px] text-white/30 w-10 sm:w-12 shrink-0 font-[family-name:var(--font-dm)]">H3</span>
+                  <p className="font-[family-name:var(--font-dm)] text-base sm:text-lg font-medium text-white/70">
                     Naslov kartice ili komponente
                   </p>
                 </div>
-                <div className="flex items-baseline gap-6 border-b border-[#d4d0ca]/5 pb-4">
-                  <span className="text-[10px] text-white/30 w-12 shrink-0 font-[family-name:var(--font-dm)]">Body</span>
-                  <p className="font-[family-name:var(--font-dm)] text-base text-white/60">
+                <div className="flex items-baseline gap-3 sm:gap-6 border-b border-[#d4d0ca]/5 pb-4">
+                  <span className="text-[10px] text-white/30 w-10 sm:w-12 shrink-0 font-[family-name:var(--font-dm)]">Body</span>
+                  <p className="font-[family-name:var(--font-dm)] text-sm sm:text-base text-white/60">
                     Osnovni tekst korišten za opise, paragrafe i sadržaj stranice.
                   </p>
                 </div>
-                <div className="flex items-baseline gap-6">
-                  <span className="text-[10px] text-white/30 w-12 shrink-0 font-[family-name:var(--font-dm)]">Caption</span>
+                <div className="flex items-baseline gap-3 sm:gap-6">
+                  <span className="text-[10px] text-white/30 w-10 sm:w-12 shrink-0 font-[family-name:var(--font-dm)]">Caption</span>
                   <p className="font-[family-name:var(--font-dm)] text-[11px] text-white/40">
                     Manje oznake, napomene i dodatne informacije
                   </p>
@@ -553,14 +553,14 @@ export default function BrandGuidelines() {
         </section>
 
         {/* MOCKUPS / APPLICATIONS */}
-        <section id="mockups" className="snap-section min-h-screen py-28 px-6">
+        <section id="mockups" className="snap-section min-h-screen py-16 sm:py-28 px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="fade-in mb-20">
+            <div className="fade-in mb-10 sm:mb-20">
               <p className="text-xs tracking-[0.3em] uppercase text-[#d4d0ca]/50 font-[family-name:var(--font-dm)] mb-3">
                 05
               </p>
-              <h2 className="font-[family-name:var(--font-orbitron)] text-3xl md:text-4xl font-bold tracking-[0.15em] uppercase text-white">
-                Primjena / Applications
+              <h2 className="font-[family-name:var(--font-orbitron)] text-2xl sm:text-3xl md:text-4xl font-bold tracking-[0.1em] sm:tracking-[0.15em] uppercase text-white">
+                Primjena
               </h2>
               <div className="w-12 h-px bg-[#d4d0ca]/30 mt-6" />
             </div>
@@ -624,7 +624,7 @@ export default function BrandGuidelines() {
                 ].map((item) => (
                   <div key={item.src}>
                     <div
-                      className="mockup-card overflow-hidden rounded-lg shadow-lg shadow-black/20 cursor-zoom-in h-56 sm:h-60 lg:h-64"
+                      className="mockup-card overflow-hidden rounded-lg shadow-lg shadow-black/20 cursor-zoom-in h-48 sm:h-60 lg:h-64"
                       onClick={() => openLightbox(item.src, item.label)}
                     >
                       <Image
@@ -646,7 +646,7 @@ export default function BrandGuidelines() {
         </section>
 
         {/* FOOTER */}
-        <section id="footer" className="snap-section py-20 px-6 border-t border-[#d4d0ca]/10">
+        <section id="footer" className="snap-section py-14 sm:py-20 px-4 sm:px-6 border-t border-[#d4d0ca]/10">
           <div className="max-w-6xl mx-auto text-center">
             <div className="fade-in">
               <p className="font-[family-name:var(--font-orbitron)] text-xl font-bold tracking-[0.2em] text-white mb-8">
